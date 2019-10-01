@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+ext {
+    dmrailRepo = 'https://nexus.dmrail.games/repository/maven-public/'
+}
+
+repositories {
+    mavenCentral()
+    maven { url dmrailRepo } // DMRail Games Nexus, where all of our artifacts are uploaded
+    jcenter()
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'tk.racket.server.Main'
+        )
+    }
+}
+
+
+dependencies {
+    compile 'tk.racket.utils:snowflake:0.0.1'
+    compile 'tk.racket.utils:http:0.0.1'
+    testCompile 'junit:junit:4.12'
+}
