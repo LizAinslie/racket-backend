@@ -20,7 +20,14 @@ jar {
 
 
 dependencies {
+    // Our own libs
     compile 'tk.racket.utils:snowflake:0.0.1'
     compile 'tk.racket.utils:http:0.0.1'
+
+    // Tests
     testCompile 'junit:junit:4.12'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
 }
